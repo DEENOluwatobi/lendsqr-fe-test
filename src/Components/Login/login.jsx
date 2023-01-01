@@ -2,22 +2,24 @@ import React, {useState} from 'react'
 import "./login.scss"
 import Logo from "../../images/logo.png"
 import Svg from "../../images/login.svg"
-import Dashboard from "../Dashboard/dashboard"
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
     const users = [{
-        username: "Tobi",
+        username: "Adedeji",
         password: "password"    
     }];
     const handleSubmit = (e) =>{
         e.preventDefault()
         const account = users.find((user) => user.username);
-        if(account && account.password === password){
+        if(account.username === username && account.password === password){
             setAuthenticated(true)
-            localStorage.setItem("authenticated", true);
+            localStorage.setItem(authenticated, true);
+            navigate("/dashboard");
         }
     }
 
@@ -38,14 +40,15 @@ const Login = () => {
                     <div className="svg">
                         <img className="img-svg" src={Svg} alt="svg" />
                     </div>
-                    <div onSubmit={handleSubmit} className="form">
+                    
+                    <form onSubmit={handleSubmit} >
                         <h2>Welcome!</h2>
                         <p className='sub'>Enter details to login</p>
                         <div className="box">
                             <input 
                                 className='email-con' 
                                 type="text" 
-                                name='Username' 
+                                name='username' 
                                 value={username} 
                                 placeholder="Email" 
                                 onChange={(e) => setUsername(e.target.value)}
@@ -57,14 +60,14 @@ const Login = () => {
                                 className='password-con' 
                                 type={state ? "text" : "password"} 
                                 placeholder="Password" 
-                                name='Password'
+                                name='password'
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                             <h5 id='show' onClick={toggleBtn}>{state ? "HIDE" : "SHOW"}</h5>
                         </div>
                         <p className='fgt'>FORGOT PASSWORD?</p>
-                        <button type='submit' value="Submit">LOG IN</button>
-                    </div>   
+                        <input type='submit' className='button' value="LOG IN"/>
+                    </form>   
                 </div>
             </div>    
         </body>

@@ -34,10 +34,10 @@ body{
 .img-svg{
     width: 100%;
 }
-.form{
+form{
     margin:0 15px ;
 }
-.form h2{
+form h2{
     color: $darkblue;
     font-weight: 800;
     font-size: 2em;
@@ -91,7 +91,7 @@ body{
     letter-spacing: 1px;
     margin-bottom: 30px;
 }
-button{
+.button{
     @include flexCenter();
     width: 90%;
     height: 40px;
@@ -101,6 +101,7 @@ button{
     border: none;
     cursor: pointer;
     transition: .2s;
+    font-weight: bold;
         
     &:hover{
         background-color: rgba(42, 163, 177, 0.99);
