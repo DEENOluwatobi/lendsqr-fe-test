@@ -8,17 +8,17 @@ $lightgray: rgba(180, 208, 213, 0.433);
     align-items: center;
 }
 
-body{
+main{
     @include flexCenter();
     width: 100%;
     height: 100vh;   
 }
-.con{
-    width: 100%;
+.cont{
+    width: 80%;
     margin: auto;
 }
-.header{
-   margin: 50px 0;
+.head{
+    margin: 50px 0;
     .logo{
         width: 15%;
     }

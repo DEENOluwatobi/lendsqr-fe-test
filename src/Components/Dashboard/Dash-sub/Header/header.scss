@@ -1,0 +1,83 @@
+$lightblue: rgba(42, 164, 177, 0.811);
+$darkblue: rgba(6, 28, 118, 0.891);
+$lightgray: rgba(180, 208, 213, 0.433);
+
+@mixin flexCenter(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topbar{
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    padding: 10px 30px;
+    box-shadow: 2px 2px 20px $lightgray;
+}
+.left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 20%;
+}
+.searchbar{
+    width: 55%;
+    border: 2px solid $lightgray;
+    border-radius: 8px;
+    @include flexCenter();
+
+    .search{
+        border: none;
+        padding: 3px 10px;
+        outline: none;
+        width: 100%;
+        color: rgb(27, 30, 35);
+        font-size: .8em;
+    }
+
+    .search-con{
+        background-color: $lightblue;
+        padding: 3px 10px;
+        cursor: pointer;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .search-icon{
+        color: white;
+        font-size: 1em;
+    }
+}
+
+.right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.docs,
+.user,
+.bell,
+.arrowdown{
+    color: $darkblue;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.docs{
+    margin: 0 30px;
+    text-decoration: underline;
+}
+.bell{
+    margin: 0 20px;
+}
+.profile{
+    width: 55px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px
+}

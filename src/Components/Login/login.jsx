@@ -31,11 +31,13 @@ const Login = () => {
 
   return (
     <div>
-        <body>
-            <div className='con'>
-                <div className="header">
+        <main className="body">
+            <div className='cont'>
+
+                <div className="head">
                     <img className="logo" src={Logo} alt="logo" />
                 </div>
+
                 <div className="container">
                     <div className="svg">
                         <img className="img-svg" src={Svg} alt="svg" />
@@ -70,7 +72,7 @@ const Login = () => {
                     </form>   
                 </div>
             </div>    
-        </body>
+        </main>
     </div>
   )
 }
