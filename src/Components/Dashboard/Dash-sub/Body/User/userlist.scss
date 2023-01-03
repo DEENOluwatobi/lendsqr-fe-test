@@ -1,0 +1,38 @@
+$lightblue: #39CDCC;
+$darkblue: rgba(6, 28, 118, 0.891);
+$deepblue: rgb(5, 20, 81);
+$lightgray: rgba(180, 208, 213, 0.433);
+$darkgray: rgba(51, 53, 62, 0.805);
+$darkergray: rgba(51, 53, 62, 0.993);
+
+table{
+    background-color: white;
+    border-radius: 10px;
+    margin: 40px 0;
+    border: 1px solid $lightgray;
+    border-radius: 7px;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 5px;
+    box-shadow: 2px 2px 30px $lightgray;
+}
+th, td{
+    border-bottom: 1px solid $lightgray;
+    text-align: left;
+    padding: 5px 0;
+}
+th{
+    font-size: .8em;
+    text-transform: uppercase;
+    color: $darkergray;
+}
+td{
+    font-size: .8em;
+    color: $darkgray;
+}
+.th-con{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+}

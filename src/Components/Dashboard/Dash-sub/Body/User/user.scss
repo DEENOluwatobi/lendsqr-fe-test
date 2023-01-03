@@ -1,0 +1,105 @@
+$lightblue: #39CDCC;
+$darkblue: rgba(6, 28, 118, 0.891);
+$deepblue: rgb(5, 20, 81);
+$lightgray: rgba(180, 208, 213, 0.433);
+$darkgray: rgba(51, 53, 62, 0.805);
+$darkergray: rgba(51, 53, 62, 0.993);
+
+@mixin flexCenter(){
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.user-con{
+    padding: 30px;
+    background-color: rgba(236, 236, 236, 0.379);
+    width: 100%;
+    height: calc(100vh - 70px);
+    overflow-y: scroll;
+    transition: 1s ease-in-out;
+
+    &::-webkit-scrollbar{
+        width: 8px;
+    }
+    &::-webkit-scrollbar-track{
+        border-radius: 10px;
+        background-color: white
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: white;
+    }
+
+    &:hover{
+        &::-webkit-scrollbar{
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track{
+            border-radius: 10px;
+            background-color: $lightgray
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: $lightblue;
+        }
+    }    
+}
+.user-boxes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    gap: 20px;
+    margin-top: 30px;
+
+    h2{
+        font-size: 1.4em;
+        font-weight: 600;
+        color: $darkergray;
+    }
+}
+.user-title{
+    font-size: 1.4em;
+    font-weight: 600;
+    color: $darkergray;
+}
+.box{
+    @include flexCenter();
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+    gap: 5px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid $lightgray;
+    border-radius: 7px;
+    box-shadow: 2px 2px 30px $lightgray;
+}
+.user-head{
+    font-size: .8em;
+    font-weight: 400;
+    color: $darkergray;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+.u-icon{
+    @include flexCenter();
+    padding: 10px;
+    border-radius: 50%;
+}
+.i-one{
+    background-color: rgba(255, 20, 145, 0.22);
+    color: deeppink;
+}
+.i-two{
+    background-color: rgba(128, 0, 128, 0.22);
+    color: purple;
+}
+.i-three{
+    background-color: rgba(255, 68, 0, 0.22);
+    color: orangered;
+}
+.i-four{
+    background-color: rgba(255, 0, 0, 0.22);
+    color: red
+}

@@ -1,21 +1,20 @@
 import React from 'react'
 import "./menu.scss"
 import { BusinessCenter, Cyclone, Equalizer, GroupsRounded, Handshake, House, HowToReg, Inventory, KeyboardArrowDown, 
-    Layers, 
-    ManageAccounts, 
-    MenuBook, 
-    MonetizationOn, PeopleAltRounded, Percent, PersonOff, Receipt, ReceiptLong, RequestQuote, Savings, Tune} from "@mui/icons-material"
+    Layers, ManageAccounts, MenuBook, MonetizationOn, PeopleAltRounded, Percent, PersonOff, Receipt, 
+    ReceiptLong, RequestQuote, Savings, Tune} from "@mui/icons-material"
+import { Outlet, Link } from "react-router-dom"    
 
-const menu = () => {
+const Menu = () => {
   return (
     <div>
         <div className="menu">
             <div className="title"><BusinessCenter/> <p>Switch Organization</p> <KeyboardArrowDown/></div>
-            <div className="dash-btn"><House/> Dashboard </div>
+            <Link className="dash-btn" to="/home" ><House/> Dashboard </Link>
             
             <div className="menu-con">
                 <p className='dash-head'>CUSTOMERS</p>
-                <div className="dash-btn"><PeopleAltRounded/> Users </div>
+                <Link className="dash-btn" to="/user" ><PeopleAltRounded/> Users </Link>
                 <div className="dash-btn"><GroupsRounded/> Guarantors </div>
                 <div className="dash-btn"><MonetizationOn/> Loans </div>
                 <div className="dash-btn"><Handshake/> Decison Models </div>
@@ -46,8 +45,9 @@ const menu = () => {
             </div>
 
         </div>
+        <Outlet/>
     </div>
   )
 }
 
-export default menu
+export default Menu

@@ -46,7 +46,7 @@ const Login = () => {
                     <form onSubmit={handleSubmit} >
                         <h2>Welcome!</h2>
                         <p className='sub'>Enter details to login</p>
-                        <div className="box">
+                        <div className="login-box">
                             <input 
                                 className='email-con' 
                                 type="text" 
@@ -56,7 +56,7 @@ const Login = () => {
                                 onChange={(e) => setUsername(e.target.value)}
                             />
                         </div>
-                        <div className="box">
+                        <div className="login-box">
                             <input 
                                 id='pwd' 
                                 className='password-con' 

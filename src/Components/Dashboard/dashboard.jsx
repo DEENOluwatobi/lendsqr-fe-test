@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom'
 import "./dashboard.scss"
 import Header from './Dash-sub/Header/header'
 import Menu from './Dash-sub/Menu/menu'
-import Body from './Dash-sub/Body/body'
+import Home from "./Dash-sub/Body/Home/home"
 
 const Dashboard = () => {
 
@@ -22,7 +22,7 @@ const Dashboard = () => {
                 <Header className="header"/>
                 <div className="main-con">
                     <Menu/>
-                    <Body/>
+                    <Home/>
                 </div>
             </div>
          )

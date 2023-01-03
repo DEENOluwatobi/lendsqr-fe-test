@@ -1,0 +1,39 @@
+$lightblue: r#39CDCC;
+$darkblue: rgba(6, 28, 118, 0.891);
+$deepblue: rgb(5, 20, 81);
+$lightgray: rgba(180, 208, 213, 0.433);
+$darkgray: rgba(51, 53, 62, 0.805);
+$darkergray: rgba(51, 53, 62, 0.993);
+
+
+.main-body{
+    background-color: rgba(181, 184, 185, 0.083);
+    width: 100%;
+    height: calc(100vh - 70px);
+    overflow-y: scroll;
+    transition: 1s ease-in-out;
+
+    &::-webkit-scrollbar{
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track{
+        border-radius: 10px;
+        background-color: white
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: white;
+    }
+
+    &:hover{
+        &::-webkit-scrollbar{
+            width: 5px;
+        }
+        &::-webkit-scrollbar-track{
+            border-radius: 10px;
+            background-color: $lightgray
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: $lightblue;
+        }
+    }    
+}

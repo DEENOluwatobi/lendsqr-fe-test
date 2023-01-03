@@ -1,4 +1,4 @@
-$lightblue: rgba(42, 164, 177, 0.811);
+$lightblue: #39CDCC;
 $darkblue: rgba(6, 28, 118, 0.891);
 $deepblue: rgb(5, 20, 81);
 $lightgray: rgba(180, 208, 213, 0.433);
@@ -61,16 +61,18 @@ $darkergray: rgba(51, 53, 62, 0.993);
 }
 .title{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     font-size: .9em;
-    padding: 5px 20px;
+    padding: 5px 25px;
     color: $deepblue;
     margin-bottom: 20px;
     font-weight: 500;
+    gap: 5px;
 }
 .dash-btn{
     @include flexDesign();
+    text-decoration: none;
 }
 .dash-head{
     font-size: .8em;
