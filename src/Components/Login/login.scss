@@ -47,6 +47,7 @@ form h2{
  .sub{
      color: $darkblue;
      margin-bottom: 40px;
+     font-weight: 500;
  }
  .login-box{
     display: flex;
@@ -69,17 +70,20 @@ form h2{
     height: 100%;
     border: none;
     outline: $lightblue;
+    font-size: .8em;
 }
 .password-con{
     width: 100%;
     height: 100%;
     border: none;
     outline: $lightblue;
+    font-size: .8em;
 }
 #show{
     color: $lightblue;
     font-size: .7em;
     padding: 10px 5px;
+    font-weight: 700;
     cursor: pointer;
 
 }

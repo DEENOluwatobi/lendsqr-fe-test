@@ -21,7 +21,7 @@ const Header = () => {
                 <p className='docs'>Docs</p>
                 <NotificationsNone className="bell"/>
                 <img className="profile" src={Profile} alt="profile" />
-                <h5 className="user">Adedeji</h5>
+                <div className="user">Adedeji</div>
                 <ArrowDropDown className="arrowdown"/>
             </div>    
         </div>

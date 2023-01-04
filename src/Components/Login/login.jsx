@@ -65,7 +65,7 @@ const Login = () => {
                                 name='password'
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-                            <h5 id='show' onClick={toggleBtn}>{state ? "HIDE" : "SHOW"}</h5>
+                            <div id='show' onClick={toggleBtn}>{state ? "HIDE" : "SHOW"}</div>
                         </div>
                         <p className='fgt'>FORGOT PASSWORD?</p>
                         <input type='submit' className='button' value="LOG IN"/>

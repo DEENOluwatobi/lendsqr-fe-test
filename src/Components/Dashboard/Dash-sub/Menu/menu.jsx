@@ -9,11 +9,11 @@ const Menu = () => {
   return (
     <div>
         <div className="menu">
-            <div className="title"><BusinessCenter/> <p>Switch Organization</p> <KeyboardArrowDown/></div>
+            <div className="title"><BusinessCenter/> Switch Organization <KeyboardArrowDown/></div>
             <Link className="dash-btn" to="/home" ><House/> Dashboard </Link>
             
             <div className="menu-con">
-                <p className='dash-head'>CUSTOMERS</p>
+                <div className='dash-head'>CUSTOMERS</div>
                 <Link className="dash-btn" to="/user" ><PeopleAltRounded/> Users </Link>
                 <div className="dash-btn"><GroupsRounded/> Guarantors </div>
                 <div className="dash-btn"><MonetizationOn/> Loans </div>
@@ -25,7 +25,7 @@ const Menu = () => {
             </div>
 
             <div className="menu-con">
-                <p className='dash-head'>BUSINESSES</p>
+                <div className='dash-head'>BUSINESSES</div>
                 <div className="dash-btn"><BusinessCenter/> Organization </div>
                 <div className="dash-btn"><RequestQuote/> Loan Products </div>
                 <div className="dash-btn"><Inventory/> Saving Products </div>
@@ -38,7 +38,7 @@ const Menu = () => {
             </div>
 
             <div className="menu-con">
-                <p className='dash-head'>SETTINGS</p>
+                <div className='dash-head'>SETTINGS</div>
                 <div className="dash-btn"><Tune/> Preferences </div>
                 <div className="dash-btn"><Percent/> Fees and Pricing </div>
                 <div className="dash-btn"><MenuBook/> Audit Logs </div>

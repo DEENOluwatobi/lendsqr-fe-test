@@ -27,13 +27,13 @@ export const Posts = ({posts, loading}) => {
               <tbody>
                 {posts.map(post => (
                   <tr key={post.id}>
-                    <td>{post.orgName}</td>
-                    <td>{post.profile.firstName + " " + post.profile.lastName}</td>
-                    <td>{post.email}</td>
-                    <td>{post.phoneNumber}</td>
-                    <td>{post.lastActiveDate}</td>
-                    <td>{post.employmentStatus}</td>
-                    <td><MoreVert/></td>
+                    <td className='td'>{post.orgName}</td>
+                    <td className='td'>{post.profile.firstName + " " + post.profile.lastName}</td>
+                    <td className='td'>{post.email}</td>
+                    <td className='td'>{post.phoneNumber}</td>
+                    <td className='td'>{post.lastActiveDate}</td>
+                    <td className='td'>{post.employmentStatus}</td>
+                    <td className='td'><MoreVert/></td>
                   </tr>
                 ))}
               </tbody>

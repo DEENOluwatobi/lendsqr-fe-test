@@ -68,16 +68,19 @@ $lightgray: rgba(180, 208, 213, 0.433);
     margin-left: 10px;
     cursor: pointer;
 }
+.user{
+    font-weight: 700;
+}
 .docs{
-    margin: 0 30px;
+    margin: 0 20px;
     text-decoration: underline;
 }
 .bell{
-    margin: 0 20px;
+    margin: 0 15px;
 }
 .profile{
-    width: 55px;
-    height: 50px;
+    width: 45px;
+    height: 40px;
     border-radius: 50%;
     margin-left: 10px
 }

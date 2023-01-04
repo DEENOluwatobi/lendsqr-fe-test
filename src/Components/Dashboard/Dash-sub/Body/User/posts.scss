@@ -12,14 +12,13 @@ table{
     border: 1px solid $lightgray;
     border-radius: 7px;
     width: 100%;
-    border-collapse: collapse;
     padding: 5px;
     box-shadow: 2px 2px 30px $lightgray;
 }
 th, td{
     border-bottom: 1px solid $lightgray;
     text-align: left;
-    padding: 2px 0;
+    padding: 5px 0;
 }
 th{
     font-size: .8em;
