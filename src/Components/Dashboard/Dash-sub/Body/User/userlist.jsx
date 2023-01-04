@@ -1,66 +1,42 @@
-import React, { useState } from 'react'
-import "./userlist.scss"
-import {KeyboardDoubleArrowDown, MoreVert} from "@mui/icons-material"
+import React, { useState, useEffect } from 'react'
+import { Posts } from './posts.jsx'
+import axios from 'axios'
+import Pagination from './pagination.js'
 
 
-class Userlist extends React.Component {
+const Userlist = () => {
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(10);
 
-    constructor(props) {
-        super(props);
+    useEffect(() => {
+        const fetchPost = async () => {
+          setLoading(true);
+          const res = await axios.get("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users");
+          setPosts(res.data);
+          setLoading(false)
+        }
 
-        this.state = {
-            items: [],
-            DataisLoaded: false,
-        };
-    };
-     componentDidMount() {
-      fetch("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
-        .then((res) => res.json())
-        .then((json) => {
-          this.setState({
-            items: json,
-            DataisLoaded: true
-          });
-        })
-     }
-     render() {
-      const { DataisLoaded, items} = this.state;
-      if(!DataisLoaded) return <div>
-        <h5>Please wait...</h5></div>;
+        fetchPost()
+    }, []);
+    
+    //get current posts
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-      return (
-        <div className='user-list'>
-          <table className="table">
-            <thead>
-                <tr>
-                  <th><div className="th-con">Organization <KeyboardDoubleArrowDown/></div></th>
-                  <th><div className="th-con">Username <KeyboardDoubleArrowDown/></div></th>
-                  <th><div className="th-con">Email <KeyboardDoubleArrowDown/></div></th>
-                  <th><div className="th-con">Phone Number <KeyboardDoubleArrowDown/></div></th>
-                  <th><div className="th-con">Date Joined <KeyboardDoubleArrowDown/></div></th>
-                  <th><div className="th-con">Status <KeyboardDoubleArrowDown/></div></th>
-                  <th></th>
-                </tr>
-            </thead>
-
-            <tbody>
-              {items.map((item) =>
-                  <tr key={item.id}>
-                    <td>{item.orgName}</td>
-                    <td>{item.profile.firstName + " " + item.profile.lastName}</td>
-                    <td>{item.email}</td>
-                    <td>{item.phoneNumber}</td>
-                    <td>{item.lastActiveDate}</td>
-                    <td>{item.employmentStatus}</td>
-                    <td><MoreVert/></td>
-                  </tr>
-              )}
-            </tbody>
-          </table>
-      
-        </div>
-      )
-    }
-    }
+    //Change Page
+    const paginate = pageNumber => setCurrentPage(pageNumber)
+    return (
+      <div>
+          <Posts posts={currentPosts} loading={loading}/>
+          <Pagination
+            postsPerPage={postsPerPage} 
+            totalPosts={posts.length} 
+            paginate={paginate}/>
+      </div>
+    );
+  }
 
 export default Userlist 
